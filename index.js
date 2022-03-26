@@ -65,7 +65,9 @@ const zooAnimals = [
   */
 
   function animalNames(array){
-  
+    let newArray = []
+    array.forEach(element => newArray.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`))
+    return newArray;
   }
   
   //console.log(animalNames(zooAnimals));
@@ -125,7 +127,7 @@ const zooAnimals = [
   */
 
   function consume(a, b, cb){
-    /*Your Code Here */
+    return cb(a , b);
   }
  
   
@@ -136,8 +138,8 @@ const zooAnimals = [
  2. Return the sum of those numbers
  */
 
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(a, b){
+  return a + b
   }
 
 
@@ -146,8 +148,8 @@ function add(/*Your Code Here */){
 2. Return the product of those numbers
 */
 
-function multiply(/*Your Code Here */){
-   /*Your Code Here */
+function multiply(a , b){
+   return a * b
   }
 
 
@@ -157,8 +159,8 @@ function multiply(/*Your Code Here */){
 💡 NOTE: The string returned must match the format above or the test will not pass!
 */
 
-function greeting(/*Your Code Here */){
-   return /*Your Code Here */
+function greeting(a , b){
+   return `Hello ${a} ${b}, nice to meet you!`
   }
   
   
@@ -183,8 +185,10 @@ function greeting(/*Your Code Here */){
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(obj){
+  this.length = obj.length
+  this.width = obj.width
+  this.height = obj.height
 }
 
 
@@ -193,7 +197,9 @@ function CuboidMaker(/*Your Code Here */){
   💡 NOTE: Formula for cuboid volume: length * width * height   
 */
 
-
+CuboidMaker.prototype.volume = function () {
+  return this.length * this.width * this.height
+};
 
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
@@ -201,7 +207,9 @@ function CuboidMaker(/*Your Code Here */){
   💡 NOTE: Formula for cuboid surface area: 2 * (length * width + length * height + width * height)  
 */
 
-
+CuboidMaker.prototype.surfaceArea = function () {
+  return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
+};
 
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker (not auto graded)🐴🐴🐴
